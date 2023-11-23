@@ -58,8 +58,14 @@ const ListProjects = () => {
    
     >
             <Text className='text-white/90 text-lg'>{item.title}</Text>
-            <Text className='text-white/80 pt-2 pb-2'>Status: {item.status}</Text>
-            <Text className='text-white/80'>Cliente: {getClientNameById(item.clientId)}</Text>
+            <View className='flex flex-row justify-between'>
+            <Text className='text-white/90 pt-2 pb-2'>Status </Text>
+            <Text className='text-white/80 pt-2 pb-2'> {item.status}</Text>
+            </View>
+            <View className='flex flex-row justify-between'>
+            <Text className='text-white/90'>Cliente</Text>
+            <Text className='text-white/80'>{getClientNameById(item.clientId)}</Text>
+            </View>
 
 
     </TouchableOpacity>
@@ -85,10 +91,13 @@ const ListProjects = () => {
   );
 
   return (
-    <ScrollView>
+    <ScrollView 
+    showsHorizontalScrollIndicator={false}
+    >
       <View className='pt-12 pb-12'>
         <Text className='text-white/80 text-2xl my-5'>Ativos</Text>
         <FlatList
+          showsHorizontalScrollIndicator={false}
           data={projects.filter(project => project.status === 'Ativo')}
           renderItem={renderActiveItem}
           keyExtractor={(item) => item.id}
