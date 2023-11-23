@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "freelanceisland",
     "name": "freelanceisland_app",
     "slug": "freelanceisland_app",
     "version": "1.0.0",
